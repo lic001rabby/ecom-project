@@ -3,6 +3,7 @@ import products from "@/assets/json/products.json";
 interface Product {
   id: string;
   name: string;
+  image: string;
   details: {
     id: string;
     description: string;
