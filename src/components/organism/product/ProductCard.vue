@@ -9,7 +9,7 @@
       <h2 class="text-xl font-semibold">{{ product.name }}</h2>
       <p class="text-gray-600 mt-2">{{ product.details.price }}</p>
       <button
-        @click="addToCart(product)"
+        @click="$emit('addToCart')"
         class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
       >
         Add to Cart
@@ -19,12 +19,10 @@
 </template>
 
 <script setup>
-import { useCart } from "@/stores/cart";
 const props = defineProps({
   product: {
     type: Object,
     required: true,
   },
 });
-const { addToCart } = useCart();
 </script>

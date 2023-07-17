@@ -6,6 +6,7 @@
       v-for="product in products"
       :key="product.id"
       :product="product"
+      @add-to-cart="addToCart(product)"
     />
   </div>
 </template>
@@ -13,6 +14,8 @@
 <script setup>
 import ProductCard from "./ProductCard.vue";
 import { useProducts } from "../../../composables/products";
+import { useCart } from "@/stores/cart";
+const { addToCart } = useCart();
 
 const { products } = useProducts();
 </script>
