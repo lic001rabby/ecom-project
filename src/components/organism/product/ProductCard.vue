@@ -1,12 +1,16 @@
 <template>
   <div class="bg-white rounded-lg shadow-md p-4">
-    <img
-      :src="product.image"
-      :alt="product.name"
-      class="w-full h-48 object-cover rounded-t-lg"
-    />
+    <router-link :to="product.id">
+      <img
+        :src="product.image"
+        :alt="product.name"
+        class="w-full h-48 object-cover rounded-t-lg"
+      />
+    </router-link>
     <div class="p-4">
-      <h2 class="text-xl font-semibold">{{ product.name }}</h2>
+      <router-link :to="product.id"
+        ><h2 class="text-xl font-semibold">{{ product.name }}</h2></router-link
+      >
       <p class="text-gray-600 mt-2">{{ product.details.price }}</p>
       <button
         @click="$emit('addToCart')"
