@@ -9,7 +9,7 @@
           >Home</router-link
         >
         <router-link to="/cart" class="text-white hover:text-gray-300">
-          Cart ({{ cartItemsCount }})
+          Cart: ${{ cartTotal }} ({{ cartItemsCount }})
         </router-link>
       </div>
     </div>
@@ -25,9 +25,11 @@ export default {
     const cartStore = useCart();
 
     const cartItemsCount = computed(() => cartStore.cartItemsCount);
+    const cartTotal = computed(() => cartStore.cartTotal);
 
     return {
       cartItemsCount,
+      cartTotal,
     };
   },
 };
