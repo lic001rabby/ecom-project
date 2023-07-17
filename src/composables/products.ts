@@ -15,8 +15,13 @@ interface Product {
   };
 }
 
+const getProductById = (id: string) => {
+  return products.find((product) => product.id === id);
+};
+
 export const useProducts = () => {
   return {
     products: products,
+    getProductById: getProductById,
   };
 };
